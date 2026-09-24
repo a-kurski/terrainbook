@@ -71,37 +71,37 @@ Furthermore, some concepts are derived from those, for instance:
 
 == Dimensionality of DTMs
 
-The term "3D" is misleading #note["3D" is misleading] in a DTM context---as it is in a GIS context---because it might refer to three different concepts: 2.5D, 2.75D, and 3D (see @fig:dimgis). #note[2.5D? 2.75D? Volumes?]
+The term "3D" is misleading #note["3D" is misleading] in a DTM context---as it is in a GIS context---because it might refer to three different concepts: 2.5D, 2.75D, and 3D //(see @fig:dimgis). #note[2.5D? 2.75D? Volumes?]
 
 
-#place(bottom,
-  float: true, 
-  wideblock(
-    [#subpar.grid(
-      columns: (45%, 45%), 
-      figure(
-        image("figs/dimgis.pdf", page: 1), 
-        caption: [A terrain] 
-      ), <fig:dimgis:1>, 
-      figure(
-        image("figs/dimgis.pdf", page: 6), 
-        caption: [2.5D modelling]
-      ), <fig:dimgis:25>,
-      figure(
-        image("figs/dimgis.pdf", page: 5), 
-        caption: [2.75D modelling]
-      ), <fig:dimgis:275>,
-      figure(
-        image("figs/dimgis.pdf", page: 4), 
-        caption: [Volumetric modelling, or full 3D]
-      ), <fig:dimgis:3>,
-      caption: [Different meanings for '3D GIS' in the context of terrains.],
-      label: <fig:dimgis>, 
-      placement: auto
-      )
-    ]
-  )
-)
+// #place(bottom,
+//   float: true, 
+//   wideblock(
+//     [#subpar.grid(
+//       columns: (45%, 45%), 
+//       figure(
+//         image("figs/dimgis.pdf", page: 1), 
+//         caption: [A terrain] 
+//       ), <fig:dimgis:1>, 
+//       figure(
+//         image("figs/dimgis.pdf", page: 6), 
+//         caption: [2.5D modelling]
+//       ), <fig:dimgis:25>,
+//       figure(
+//         image("figs/dimgis.pdf", page: 5), 
+//         caption: [2.75D modelling]
+//       ), <fig:dimgis:275>,
+//       figure(
+//         image("figs/dimgis.pdf", page: 4), 
+//         caption: [Volumetric modelling, or full 3D]
+//       ), <fig:dimgis:3>,
+//       caption: [Different meanings for '3D GIS' in the context of terrains.],
+//       label: <fig:dimgis>, 
+//       placement: auto
+//       )
+//     ]
+//   )
+// )
 
 === 2.5D
 #index[2.5D] 
@@ -111,12 +111,13 @@ What is usually used for modelling terrains: a surface (which is topologically a
 In other words, the surface can be projected to the $x y$-plane and maintain its topology.
 In this book, when we refer to "terrains" we mean such a surface, unless explicitly stated otherwise.
 This is often what is used in GIS software, and the well-known raster/grid is such a case.
-Observe that this restricts the real-world cases that can be modelled because, as shown in @fig:dimgis:25, vertical surfaces (e.g.~walls of a building if we model all man-made objects with the terrain to construct a digital surface model), overhangs (e.g.~the balcony of a house) and caves are impossible to represent.
+Observe that this restricts the real-world cases that can be modelled because, as shown in // @fig:dimgis:25, 
+vertical surfaces (e.g.~walls of a building if we model all man-made objects with the terrain to construct a digital surface model), overhangs (e.g.~the balcony of a house) and caves are impossible to represent.
 As shown in the figure, these are modelled as nearly vertical surfaces; in practice the wall of a building could deviate by for instance 1 degree from the vertical. 
 
 === 2.75D
 #index[2.75D] 
-The term "2.75D" refers to a surface (a 2-manifold) but unlike for the 2.5D case, the surface is not restricted to be projectable to the 2D plane (see @fig:dimgis:275).
+The term "2.75D" refers to a surface (a 2-manifold) but unlike for the 2.5D case, the surface is not restricted to be projectable to the 2D plane // (see @fig:dimgis:275).
 Thus, more than one $z$ value is allowed for a given location ($x,y$).
 The term '2.75D' was coined because it is more than 2.5D, but less than 3D.
 #note[2.75D]
@@ -128,7 +129,7 @@ We are not aware of any popular GIS software that allows us to model a terrain a
 // TODO short title for outline \subsection[3D]{Full 3D, or volumetric modelling} 
 This refers to the modelling of not only the boundaries of objects, but also of the interior of these.
 #note[volumetric modelling] #index[volumetric modelling]
-Notice for instance in @fig:dimgis:3 that each building is represented with a solid.
+Notice for instance in // @fig:dimgis:3 that each building is represented with a solid.
 The volume of buildings can therefore be calculated (since the ground floor of buildings would be modelled for instance), while with the other variations it is not possible. 
 Such a representation is usually done with a 2.5D terrain (although a 2.75D could also be used) and a set of buildings/objects that are connected to the terrain.
 
